@@ -1,0 +1,55 @@
+body {
+    background-color: black;
+}
+
+.hi {
+    color: antiquewhite;
+    text-align: center;
+    font-family: CCNF;
+    font-size: xx-large;
+    margin: auto;
+    width: 25%;
+    border-style: double double dotted;
+    border-color: cyan blue;
+    padding: 10px;
+}
+
+.aboutme {
+    color: rgb(136, 241, 241);
+    font-family: CCNF;
+    font-size: medium;
+    position: absolute;
+    left: 130px;
+    padding: 10px;
+    width: 40%;
+    border-style: groove;
+}
+
+.technos {
+    color: rgb(83, 83, 231);
+    font-family: CCNF;
+    font-size: medium;
+    position: absolute;
+    right: 130px;
+    top: 400px;
+    padding: 10px;
+    width: 40%;
+    border-style: groove;
+}
+
+.links {
+    color: rgb(146, 98, 224);
+    font-family: CCNF;
+    font-size: medium;
+    position: absolute;
+    top: 700px;
+    left: 540px;
+    padding: 10px;
+    width: 40%;
+    border-style: groove;
+}
+
+@font-face {
+    font-family: CCNF;
+    src: url("../fonts/cascadia-code/CascadiaCode-2407.24/woff2/CascadiaCodeNF.woff2");
+}
