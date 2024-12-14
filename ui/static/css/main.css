@@ -1,5 +1,6 @@
 body {
-    background-color: black;
+    background-color: rgb(6, 4, 3);
+    position: relative;
 }
 
 .hi {
@@ -8,18 +9,18 @@ body {
     font-family: CCNF;
     font-size: xx-large;
     margin: auto;
-    width: 25%;
+    width: 30%;
     border-style: double double dotted;
-    border-color: cyan blue;
+    border-color: rgb(89, 209, 209) rgb(85, 85, 194);
     padding: 10px;
 }
 
 .aboutme {
-    color: rgb(136, 241, 241);
+    color: rgb(93, 165, 165);
     font-family: CCNF;
     font-size: medium;
     position: absolute;
-    left: 130px;
+    left: 10%;
     padding: 10px;
     width: 40%;
     border-style: groove;
@@ -30,26 +31,27 @@ body {
     font-family: CCNF;
     font-size: medium;
     position: absolute;
-    right: 130px;
-    top: 400px;
+    right: 10%;
+    margin-top: 25%;
     padding: 10px;
     width: 40%;
     border-style: groove;
 }
 
 .links {
-    color: rgb(146, 98, 224);
+    color: rgb(65, 152, 223);
     font-family: CCNF;
     font-size: medium;
     position: absolute;
-    top: 700px;
-    left: 540px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 55%;
     padding: 10px;
-    width: 40%;
+    width: 20%;
     border-style: groove;
 }
 
 @font-face {
     font-family: CCNF;
-    src: url("../fonts/cascadia-code/CascadiaCode-2407.24/woff2/CascadiaCodeNF.woff2");
+    src: url("../fonts/cascadia-code/CascadiaCodeNF.woff2");
 }
