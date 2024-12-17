@@ -14,13 +14,28 @@ app.mount("/static", StaticFiles(directory="ui/static"), name="static")
 async def home():
     return FileResponse("ui/html/home.html")
 
-@app.get("/favicon.ico")
-async def favicon():
-    return FileResponse("ui/static/favicon.ico")
-
-@app.get("blog")
+@app.get("/blog")
 async def blog_handler():
-    return {"articles": ["some", "strange", "bullshit"]}
+    return FileResponse("ui/html/blog.html")
+
+@app.get("/blog/data")
+async def blog_data_handler():
+    return {"articles": [
+        {
+            "title": "First post",
+            "content": "Skibidi dop dop dop dop yes yes yes..."
+        }, 
+        {
+            "title": "Second post",
+            "content": "Skibidi dop dop dop dop yes yes yes..."
+        }, 
+        {
+            "title": "Third post",
+            "content": "Skibidi dop dop dop dop yes yes yes..."
+        }
+    ]}
+
+
 
 
 # if __name__ == "main":
