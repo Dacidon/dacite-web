@@ -1,8 +1,9 @@
+import asyncio
 from fastapi import FastAPI
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.security import OAuth2PasswordBearer
-# from db.db_init import Base
+from db.db_init import Base, db_engine
 
 app = FastAPI()
 
@@ -35,9 +36,10 @@ async def blog_data_handler():
         }
     ]}
 
+# TODO: RIP THE FUCK OFF SQLALCHEMY IDK HOW TO USE IT
+async def main():
+   await Base.metadata.create_all(db_engine)
 
-
-
-# if __name__ == "main":
-#     Base.metadata.create_all(db_engine)
+if __name__ == "main":
+    asyncio.run(main())
     

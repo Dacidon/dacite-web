@@ -1,4 +1,4 @@
-from author_model import Author
+from . import author_model
 from db.db_init import Base
 from sqlalchemy.orm import mapped_column, relationship
 from sqlalchemy.orm import Mapped
@@ -10,7 +10,7 @@ class Article(Base):
     
     id: Mapped[int] = mapped_column(primary_key=True)
     author_id: Mapped[str] = mapped_column(ForeignKey("author.id"))
-    text: Mapped[str] = mapped_column(Text())
+    content: Mapped[str] = mapped_column(Text())
     created_at: Mapped[datetime] = mapped_column(DateTime())
     
-    author: Mapped["Author"] = relationship(back_populates="article")
+    author: Mapped["author_model.Author"] = relationship(back_populates="article")
