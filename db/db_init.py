@@ -1,7 +1,8 @@
 import psycopg
 
 async def connect():
-    conn = psycopg.AsyncConnection.connect("dbname=daciteWeb user=daciteweb password=1952 host=localhost", min_size=1, max_size=10)
+    conn = await psycopg.AsyncConnection.connect("dbname=daciteWeb user=daciteweb password=1952 host=localhost")
+    return conn
 
 async def init_db():
     conn = await connect()    

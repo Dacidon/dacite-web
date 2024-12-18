@@ -1,14 +1,35 @@
-.post-container {
-    color: antiquewhite;
-    font-family: CCNF;
-    margin: 20px;
-    border-left-style: double;
-    padding-left: 10px;
-}
-
 .title {
     color: antiquewhite;
     font-family: CCNF;
     font-size: 40px;
     margin: 40px;
+}
+
+.post-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 10px;
+    color: antiquewhite;
+    font-family: CCNF;
+    font-size: medium;
+    margin: 20px;
+    border-left-style: solid;
+    padding-left: 10px;
+}
+
+.post-create {
+    display: grid;
+    gap: 10px;
+    color: antiquewhite;
+    font-family: CCNF;
+    font-size: 20px;
+    margin: 20px;
+    border-style: groove;
+    padding: 5px;
+}
+
+.dates {
+    color: rgb(188, 177, 162);
+    font-size: smaller;
 }
