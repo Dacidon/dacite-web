@@ -1,0 +1,14 @@
+.post-container {
+    color: antiquewhite;
+    font-family: CCNF;
+    margin: 20px;
+    border-left-style: double;
+    padding-left: 10px;
+}
+
+.title {
+    color: antiquewhite;
+    font-family: CCNF;
+    font-size: 40px;
+    margin: 40px;
+}

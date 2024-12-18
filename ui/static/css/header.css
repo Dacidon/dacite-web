@@ -1,0 +1,24 @@
+body {
+    background-color: rgb(6, 4, 3);
+    display: flex; /* Make body a flex container */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    margin: 0;
+}
+
+.hi {
+    color: antiquewhite;
+    text-align: center;
+    font-family: CCNF;
+    font-size: xx-large;
+    width: 30%;
+    border-style: double double dotted;
+    border-color: rgb(89, 209, 209) rgb(85, 85, 194);
+    padding: 10px;
+    margin: 20px 0; /* Add margin for spacing */
+}
+
+@font-face {
+    font-family: CCNF;
+    src: url("../fonts/cascadia-code/CascadiaCodeNF.woff2");
+}
