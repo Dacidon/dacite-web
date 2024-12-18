@@ -1,7 +1,11 @@
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.ext.asyncio import create_async_engine
+import psycopg
 
-db_engine = create_async_engine("postgresql+psycopg://daciteweb:1952@localhost:5432/daciteWeb")
+async def connect():
+    conn = psycopg.AsyncConnection.connect("dbname=daciteWeb user=daciteweb password=1952 host=localhost", min_size=1, max_size=10)
 
-class Base(DeclarativeBase):
-    pass  
+async def init_db():
+    conn = await connect()    
+    async with conn.cursor() as cur:
+        await cur.execute("SET TIMEZONE to 'Europe/Moscow'")
+    await conn.close()
+            
