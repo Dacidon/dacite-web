@@ -1,10 +1,10 @@
 from db.db_init import connect
 from datetime import datetime, timezone, timedelta
 
-async def fetch_posts():
+async def fetch_post(post_id: int):
     conn = await connect()    
     async with conn.cursor() as cur:
-        await cur.execute("SELECT * FROM post")
+        await cur.execute("SELECT * FROM post WHERE id = %s", post_id)
         posts = await cur.fetchall()
     await conn.close()
     return posts

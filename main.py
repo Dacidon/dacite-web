@@ -6,7 +6,7 @@ from fastapi.security import OAuth2PasswordBearer
 from pydantic import BaseModel
 from datetime import datetime as dt
 from db.db_init import init_db
-from db.models.post import fetch_posts, fetch_recent_posts, create_post, delete_post, update_post
+from db.models.post import fetch_post, fetch_recent_posts, create_post, delete_post, update_post
 
 app = FastAPI()
 
@@ -34,6 +34,10 @@ async def blog_render():
 async def create_post_render():
     return FileResponse("ui/html/create_post.html")
 
+@app.get("/blog/{post_id}")
+async def post_render():
+    return FileResponse("ui/html/post_template.html")
+
 @app.get("/api/blog/recent")
 async def recent_posts_handler():
     recent = await fetch_recent_posts()
@@ -49,11 +53,29 @@ async def recent_posts_handler():
         data.append(json)
     return data
         
+@app.get("/api/blog/{post_id}")
+async def post_handler(post_id):
+    post = fetch_post(post_id)
+    data = []
+    for element in post:
+        json = {
+            "id": element[0],
+            "title": element[1],
+            "content": element[2],
+            "created_at": element[3],
+            "updated_at": element[4]
+        }
+        data.append(json)
+    return data
     
 @app.post("/api/blog/create")
 async def create_post_handler(post: Post):
     await create_post(post.title, post.content)
     return {"message": "successfully created post"}
+
+# @app.delete("/api/blog/delete")
+# async def delete_post_handler(post: Post):
+#     await delete_post(post.)
 
 async def main():
    await init_db()
