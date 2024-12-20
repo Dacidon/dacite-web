@@ -55,18 +55,14 @@ async def recent_posts_handler():
         
 @app.get("/api/blog/{post_id}")
 async def post_handler(post_id):
-    post = fetch_post(post_id)
-    data = []
-    for element in post:
-        json = {
-            "id": element[0],
-            "title": element[1],
-            "content": element[2],
-            "created_at": element[3],
-            "updated_at": element[4]
-        }
-        data.append(json)
-    return data
+    post = await fetch_post(post_id)
+    json = {
+        "title": post[1],
+        "content": post[2],
+        "created_at": post[3],
+        "updated_at": post[4]
+    }
+    return json
     
 @app.post("/api/blog/create")
 async def create_post_handler(post: Post):

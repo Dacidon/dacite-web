@@ -5,31 +5,39 @@
     margin: 40px;
 }
 
-.post-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: 10px;
-    color: antiquewhite;
-    font-family: CCNF;
+.post {
+    display: flex;
+    flex-direction: column;
     font-size: medium;
     margin: 20px;
+}
+
+.post-preview-container {
+    gap: 20px;
     border-left-style: solid;
     padding-left: 10px;
+    text-align: left;
+    line-height: 20px;
+}
+
+.post-container {
+    gap: 20px;
+    padding-left: 10px;
+    text-align: justify;
+    line-height: 30px;
+    height: 80vh;
+    width: 75%;
 }
 
 .post-create {
-    display: grid;
-    gap: 10px;
-    color: antiquewhite;
-    font-family: CCNF;
     font-size: 20px;
-    margin: 20px;
-    border-style: groove;
     padding: 5px;
+    width: 50vw;
+    height: 50vh;
 }
 
 .dates {
     color: rgb(188, 177, 162);
     font-size: smaller;
+    align-self: flex-start;
 }

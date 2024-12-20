@@ -7,15 +7,24 @@ body {
 }
 
 .hi {
-    color: antiquewhite;
     text-align: center;
-    font-family: CCNF;
     font-size: xx-large;
     width: 30%;
     border-style: double double dotted;
     border-color: rgb(89, 209, 209) rgb(85, 85, 194);
     padding: 10px;
     margin: 20px 0; /* Add margin for spacing */
+}
+
+.base {
+    color: antiquewhite;
+    font-family: CCNF;
+    text-decoration: none;
+}
+
+.home-btn {
+    color: antiquewhite;
+    text-decoration: none;
 }
 
 @font-face {
