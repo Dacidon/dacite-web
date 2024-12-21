@@ -34,6 +34,10 @@ async def blog_render():
 async def create_post_render():
     return FileResponse("ui/html/create_post.html")
 
+@app.get("/blog/edit/{post_id}")
+async def edit_post_render():
+    return FileResponse("ui/html/edit_post.html")
+
 @app.get("/blog/{post_id}")
 async def post_render():
     return FileResponse("ui/html/post_template.html")
@@ -68,6 +72,11 @@ async def post_handler(post_id):
 async def create_post_handler(post: Post):
     await create_post(post.title, post.content)
     return {"message": "successfully created post"}
+
+@app.post("/api/blog/edit/{post_id}")
+async def edit_post_handler(post_id, post: Post):
+    await update_post(post.title, post.content, post_id)
+    return {"message": "successfully edited post"}
 
 # @app.delete("/api/blog/delete")
 # async def delete_post_handler(post: Post):

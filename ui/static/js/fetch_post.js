@@ -14,7 +14,7 @@ fetchPost(post => {
     postElement.innerHTML = `
         <span style="font-size: 30px; flex: 1">${title}</span>
         <span style="align-self: center; flex: 6;">${content}</span>
-        <span class="dates">created: ${created_at}<br>updated: ${updated_at === created_at ? "never" : updated_at}</span>
+        <span class="dates">created: ${created_at}<br>edited: ${updated_at === created_at ? "never" : updated_at}</span>
     `;
     postElement.classList = "base post-container post";
     document.body.appendChild(postElement);

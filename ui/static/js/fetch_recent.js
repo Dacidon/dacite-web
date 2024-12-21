@@ -16,7 +16,7 @@ fetchRecentBlogs(data => {
             <span><a href="/blog/${id}" class="base" style="border-bottom-style: solid; border-bottom-width: 2px;">${title}</a></span>
             <span>${trimmedContent.substring(0, Math.min(trimmedContent.length, trimmedContent.lastIndexOf(" "))) + "..."}</span>
             <span class="dates">created: ${created_at}</span>
-            <span class="dates">updated: ${updated_at === created_at ? "never" : updated_at}</span>
+            <span class="dates">edited: ${updated_at === created_at ? "never" : updated_at}</span>
         `;
         postElement.classList = "base post-preview-container post";
         document.body.appendChild(postElement);
