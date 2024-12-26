@@ -61,6 +61,7 @@ async def recent_posts_handler():
 async def post_handler(post_id):
     post = await fetch_post(post_id)
     json = {
+        "id": post[0],
         "title": post[1],
         "content": post[2],
         "created_at": post[3],
